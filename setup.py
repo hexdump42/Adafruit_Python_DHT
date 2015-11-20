@@ -1,6 +1,7 @@
 from ez_setup import use_setuptools
 use_setuptools()
 from setuptools import setup, find_packages, Extension
+import os
 import sys
 
 import Adafruit_DHT.platform_detect as platform_detect
@@ -60,6 +61,11 @@ elif platform == 'TEST':
 else:
 	print 'Could not detect if running on the Raspberry Pi or Beaglebone Black.  If this failure is unexpected, you can run again with --force-pi or --force-bbb parameter to force using the Raspberry Pi or Beaglebone Black respectively.'
 	sys.exit(1)
+
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 # Call setuptools setup function to install package.
 setup(name              = 'Adafruit_Python_DHT',
