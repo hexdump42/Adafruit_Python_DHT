@@ -62,12 +62,22 @@ else:
 	sys.exit(1)
 
 # Call setuptools setup function to install package.
-setup(name              = 'Adafruit_DHT',
+setup(name              = 'Adafruit_Python_DHT',
 	  version           = '1.1.0',
-	  author            = 'Tony DiCola',
-	  author_email      = 'tdicola@adafruit.com',
+	  author            = 'Orginal Author: Tony DiCola',
+	  author_email      = 'mark.john.rees@gmail.com',
 	  description       = 'Library to get readings from the DHT11, DHT22, and AM2302 humidity and temperature sensors on a Raspberry Pi or Beaglebone Black.',
+          long_description=read('README.md'),
 	  license           = 'MIT',
-	  url               = 'https://github.com/adafruit/Adafruit_Python_DHT/',
+	  url               = 'https://github.com/hexdump42/Adafruit_Python_DHT.git',
 	  packages          = find_packages(),
-	  ext_modules       = extensions)
+	  ext_modules       = extensions,
+          classifiers       = [
+                              'Development Status :: 5 - Production/Stable',
+                              'Operating System :: POSIX :: Other',
+                              'Programming Language :: Python :: 2.6',
+                              'Programming Language :: Python :: 2.7',
+                              'Topic :: Software Development :: Embedded Systems',
+                              'Topic :: System :: Hardware :: Hardware Drivers',
+          ]
+)
