@@ -4,7 +4,7 @@ Adafruit Python DHT Sensor Library
 Python library to read the DHT series of humidity and temperature sensors on a Raspberry Pi or Beaglebone Black.
 
 Designed specifically to work with the Adafruit DHT series sensors ----> https://www.adafruit.com/products/385
-It is also know to work with AM2302 based sensors.
+It is also known to work with AM2302 based sensors.
 
 This is a fork of https://github.com/adafruit/Adafruit_Python_DHT so that I could put a copy up on PyPi as this hasn't been done by the original author.
 
@@ -17,7 +17,6 @@ sudo apt-get update
 sudo apt-get install build-essential python-dev
 ````
 
-
 The library can be installed using pip
 
 ````
@@ -26,7 +25,9 @@ pip install adafruit_python_dht
 
 or by downloading the source archive from:
 
-PyPi https://pypi.python.org/pypi/Adafruit_Python_DHT othe download link on the right, 
+PyPi https://pypi.python.org/pypi/Adafruit_Python_DHT  
+
+or
 
 Github https://github.com/hexdump42/Adafruit_Python_DHT
 
