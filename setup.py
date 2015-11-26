@@ -1,5 +1,3 @@
-from ez_setup import use_setuptools
-use_setuptools()
 from setuptools import setup, find_packages, Extension
 import os
 import sys
@@ -59,7 +57,7 @@ elif platform == 'TEST':
 								["source/_Test_Driver.c", "source/Test/test_dht_read.c"],
 								extra_compile_args=['-std=gnu99']))
 else:
-	print 'Could not detect if running on the Raspberry Pi or Beaglebone Black.  If this failure is unexpected, you can run again with --force-pi or --force-bbb parameter to force using the Raspberry Pi or Beaglebone Black respectively.'
+	print('Could not detect if running on the Raspberry Pi or Beaglebone Black.  If this failure is unexpected, you can run again with --force-pi or --force-bbb parameter to force using the Raspberry Pi or Beaglebone Black respectively.')
 	sys.exit(1)
 
 
@@ -69,7 +67,7 @@ def read(fname):
 
 # Call setuptools setup function to install package.
 setup(name              = 'Adafruit_Python_DHT',
-	  version           = '1.1.0',
+	  version           = '1.1.1',
 	  author            = 'Orginal Author: Tony DiCola',
 	  author_email      = 'mark.john.rees@gmail.com',
 	  description       = 'Library to get readings from the DHT11, DHT22, and AM2302 humidity and temperature sensors on a Raspberry Pi or Beaglebone Black.',
@@ -85,5 +83,10 @@ setup(name              = 'Adafruit_Python_DHT',
                               'Programming Language :: Python :: 2.7',
                               'Topic :: Software Development :: Embedded Systems',
                               'Topic :: System :: Hardware :: Hardware Drivers',
-          ]
+          ],
+	  entry_points = {
+	  	'console_scripts': [
+			'Adafruit_DHT = examples.AdafruitDHT:main',
+	  	]
+	 }
 )

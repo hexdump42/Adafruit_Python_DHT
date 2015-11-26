@@ -17,10 +17,31 @@ sudo apt-get update
 sudo apt-get install build-essential python-dev
 ````
 
-Install the library by downloading with the download link on the right, unzipping the archive, and executing:
+
+The library can be installed using pip
+
+````
+pip install adafruit_python_dht
+````
+
+or by downloading the source archive from:
+
+PyPi https://pypi.python.org/pypi/Adafruit_Python_DHT othe download link on the right, 
+
+Github https://github.com/hexdump42/Adafruit_Python_DHT
+
+expanding the archive, and executing:
 
 ````
 sudo python setup.py install
+````
+
+You can test by using the script Adafruit_DHT which is installed as part of the distribution.
+
+````
+usage: sudo Adafruit_DHT [11|22|2302] GPIOpin#
+
+example: sudo Adafruit_DHT 2302 4 - Read from an AM2302 connected to GPIO #4
 ````
 
 See example of usage in the examples folder.
