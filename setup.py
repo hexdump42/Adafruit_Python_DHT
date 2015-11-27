@@ -67,8 +67,8 @@ def read(fname):
 
 # Call setuptools setup function to install package.
 setup(name              = 'Adafruit_Python_DHT',
-	  version           = '1.1.1',
-	  author            = 'Orginal Author: Tony DiCola',
+	  version           = '1.1.2',
+	  author            = 'Orginal Author: Tony DiCola, Maintainer: Mark Rees',
 	  author_email      = 'mark.john.rees@gmail.com',
 	  description       = 'Library to get readings from the DHT11, DHT22, and AM2302 humidity and temperature sensors on a Raspberry Pi or Beaglebone Black.',
           long_description=read('README.md'),
