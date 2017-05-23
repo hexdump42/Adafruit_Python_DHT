@@ -20,7 +20,7 @@
 # SOFTWARE.
 import time
 
-import platform_detect
+from . import platform_detect
 
 
 # Define error constants.
@@ -45,15 +45,15 @@ def get_platform():
 		# Check for version 1 or 2 of the pi.
 		version = platform_detect.pi_version()
 		if version == 1:
-			import Raspberry_Pi
+			from . import Raspberry_Pi
 			return Raspberry_Pi
 		elif version == 2:
-			import Raspberry_Pi_2
+			from . import Raspberry_Pi_2
 			return Raspberry_Pi_2
 		else:
 			raise RuntimeError('No driver for detected Raspberry Pi version available!')
 	elif plat == platform_detect.BEAGLEBONE_BLACK:
-		import Beaglebone_Black
+		from . import Beaglebone_Black
 		return Beaglebone_Black
 	else:
 		raise RuntimeError('Unknown platform.')

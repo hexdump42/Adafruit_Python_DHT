@@ -41,6 +41,7 @@ import datetime
 import Adafruit_DHT
 import gspread
 from oauth2client.client import SignedJwtAssertionCredentials
+import six
 
 # Type of sensor, can be Adafruit_DHT.DHT11, Adafruit_DHT.DHT22, or Adafruit_DHT.AM2302.
 DHT_TYPE = Adafruit_DHT.DHT22
@@ -89,13 +90,13 @@ def login_open_sheet(oauth_key_file, spreadsheet):
 		worksheet = gc.open(spreadsheet).sheet1
 		return worksheet
 	except Exception as ex:
-		print 'Unable to login and get spreadsheet.  Check OAuth credentials, spreadsheet name, and make sure spreadsheet is shared to the client_email address in the OAuth .json file!'
-		print 'Google sheet login failed with error:', ex
+		print('Unable to login and get spreadsheet.  Check OAuth credentials, spreadsheet name, and make sure spreadsheet is shared to the client_email address in the OAuth .json file!')
+		six.print_(('Google sheet login failed with error:', ex))
 		sys.exit(1)
 
 
-print 'Logging sensor measurements to {0} every {1} seconds.'.format(GDOCS_SPREADSHEET_NAME, FREQUENCY_SECONDS)
-print 'Press Ctrl-C to quit.'
+six.print_(('Logging sensor measurements to {0} every {1} seconds.'.format(GDOCS_SPREADSHEET_NAME, FREQUENCY_SECONDS)))
+print('Press Ctrl-C to quit.')
 worksheet = None
 while True:
 	# Login if necessary.
@@ -112,8 +113,8 @@ while True:
 		time.sleep(2)
 		continue
 
-	print 'Temperature: {0:0.1f} C'.format(temp)
-	print 'Humidity:    {0:0.1f} %'.format(humidity)
+	six.print_(('Temperature: {0:0.1f} C'.format(temp)))
+	six.print_(('Humidity:    {0:0.1f} %'.format(humidity)))
  
 	# Append the data in the spreadsheet, including a timestamp
 	try:
@@ -121,11 +122,11 @@ while True:
 	except:
 		# Error appending data, most likely because credentials are stale.
 		# Null out the worksheet so a login is performed at the top of the loop.
-		print 'Append error, logging in again'
+		print('Append error, logging in again')
 		worksheet = None
 		time.sleep(FREQUENCY_SECONDS)
 		continue
 
 	# Wait 30 seconds before continuing
-	print 'Wrote a row to {0}'.format(GDOCS_SPREADSHEET_NAME)
+	six.print_(('Wrote a row to {0}'.format(GDOCS_SPREADSHEET_NAME)))
 	time.sleep(FREQUENCY_SECONDS)

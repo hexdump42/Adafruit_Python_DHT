@@ -20,7 +20,7 @@
 # SOFTWARE.
 import re
 
-import common
+from . import common
 import Beaglebone_Black_Driver as driver
 
 
