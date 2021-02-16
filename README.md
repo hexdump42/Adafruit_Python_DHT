@@ -7,6 +7,7 @@ Designed specifically to work with the Adafruit DHT series sensors ----> https:/
 It is also known to work with AM2302 based sensors.
 
 This is a fork of https://github.com/adafruit/Adafruit_Python_DHT so that I could put a copy up on PyPi as this hasn't been done by the original author.
+In March, 2018 I handed ownership of the PyPi project https://pypi.org/project/Adafruit_Python_DHT/ to Adafruit
 
 Currently the library is only tested with Python 2.6/2.7.
 
